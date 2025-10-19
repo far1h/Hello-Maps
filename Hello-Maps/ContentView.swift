@@ -6,16 +6,17 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
-        }
-        .padding()
+        // Show a map centered on Jakarta, Indonesia
+        Map( coordinateRegion: .constant(
+            MKCoordinateRegion(
+                center: CLLocationCoordinate2D(latitude: -6.200000, longitude: 106.816666),
+                span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05)
+            )
+        ))
     }
 }
 
